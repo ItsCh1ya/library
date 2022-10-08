@@ -6,7 +6,7 @@ from flask import request, jsonify
 def api_save_book():
     requested_json = request.json
     cur = create_connection("db.sqlite").cursor()
-    cur.execute(f"INSERT INTO tmp(title,author,year,url) VALUE ({requested_json['title']}, {requested_json['author']}, {requested_json['year']}, {requested_json['url']})")
+    cur.execute(f"INSERT INTO books(title,author,year,url) VALUES ({requested_json['title']}, {requested_json['author']}, {requested_json['year']}, {requested_json['url']})")
     return jsonify({"status":"success", "description":"Book successfuly added to db"})
 
 @app.route("/api/get_all_books")

@@ -1,10 +1,10 @@
 const tableData = document.querySelector('table thead');
 const loader = document.querySelector('.loader');
 
-const allData = [];
+let allData = [];
 
 async function getData(){
-    return await fetch('').then(data => data.json()).then(data => {
+    return await fetch('/api/get_all_books').then(data => data.json()).then(data => {
         allData = data || [];
     });
 }
@@ -20,12 +20,6 @@ function fillTable(){
     tableData.innerHTML = result.join('');
 }
 
-function initTable(){
-    $(document).ready(function () {
-        $('table').DataTable();
-    });
-}
-
 async function sleep(ms){
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -39,11 +33,14 @@ async function endLoader(){
 }
 
 async function init(){
-    // await getData();
-    // fillTable();
-    // initTable();
+    await getData();
+    fillTable();
     await sleep(1000);
     await endLoader();
 }
 
 init();
+
+$(document).ready(function () {
+    $('table').DataTable();
+});
