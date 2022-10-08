@@ -8,7 +8,7 @@ from flask import request, jsonify
 def api_save_book():
     requested_json = request.json
     cur = create_connection("db.sqlite").cursor()
-    cur.execute(f"INSERT INTO tmp(title,author,year) VALUE ({requested_json['title']}, {requested_json['author']}, {requested_json['year']})")
+    cur.execute(f"INSERT INTO tmp(title,author,year,url) VALUE ({requested_json['title']}, {requested_json['author']}, {requested_json['year']}, {requested_json['url']})")
     return jsonify({"status":"success", "description":"Book successfuly added to db"})
 
 @app.route("/api/get_all_books")
@@ -23,6 +23,6 @@ def api_edit_book():
     cur = create_connection("db.sqlite").cursor()
     cur.execute(f"""
         UPDATE books
-        SET title = '{requested_json['title']}', author= '{requested_json['author']}, year = {requested_json['year']}, id = {requested_json['id']}'
+        SET title = '{requested_json['title']}', author= '{requested_json['author']}, year = {requested_json['year']}, id = {requested_json['id']}', url = {requested_json['url']}
         WHERE id = {requested_json['id']};
     """)
