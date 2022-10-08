@@ -1,6 +1,6 @@
 from library import app
-from flask import send_from_directory
+from flask import render_template
 
-@app.route('/<path:path>')
-def send_report(path):
-    return send_from_directory('static', path)
+@app.route('/')
+def view_index():
+    return render_template('index.html')
