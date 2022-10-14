@@ -48,6 +48,18 @@ body {
     // }
 }
 
+.block {
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    border-radius: 2%;
+    text-align: center;
+
+     &:hover {
+        cursor: pointer;
+     }
+}
+
 .headSection {
     display: flex;
     position: relative;
@@ -110,10 +122,12 @@ body {
                     bottom: 0;
                     left: 0;
                     background: linear-gradient(250deg, #1bc2af, #5a4ea0, #ba2b69);
+                    // background-size: 200% 200%;
+                    // animation: perehod 5s infinite;
                     transform-origin: bottom right;
                     transition: transform 0.25s ease-out;
 
-                    
+
                 }
 
                 &:hover::after {
@@ -124,6 +138,88 @@ body {
                 &:hover {
                     cursor: pointer;
                 }
+            }
+        }
+    }
+}
+
+main {
+
+    .newsDirectory {
+        min-height: 800px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+
+        .leftNewsBlock {
+            margin: auto;
+            min-width: 40%;
+            font-size: 35px;
+            font-weight: 700;
+            text-align: center;
+
+            color: rgb(4, 2, 15);
+
+            .titleBlock {
+                user-select: none;
+
+                p {
+                    padding: 10px 0 0 0;
+                }
+
+                h2 {
+                    padding: 0 0 35px 0;
+                    border-bottom: 4px solid rgb(4, 2, 15);
+                }
+            }
+        }
+
+        .rightNewsBlock {
+            min-width: 60%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .topLeftNews {
+                background: #1bc2af;
+            }
+
+            .topRightNews {
+                background: #5a4ea0;
+            }
+
+            .botLeftNews {
+                background: #ba2b69;
+            }
+
+            .botRightNews {
+                background: #1b69c2;
+            }
+        }
+    }
+
+    .purpleBack {
+        background: url(../../img/fatbooks.jpg) no-repeat;
+
+        .purpleNewsDirectory {
+            min-height: 500px;
+            display: flex;
+            justify-content: space-between;
+
+            .purpleBlock {
+                margin: auto;
+                min-width: 65%;
+
+                color: #ffffff;
+                background: #5a4ea0;
+            }
+
+            .purpleNews {
+                min-width: 35%;
+                background: #ffffff;
+                text-align: center;
             }
         }
     }
