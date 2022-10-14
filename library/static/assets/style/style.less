@@ -1,0 +1,158 @@
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'),
+        url('../../fonts/Roboto-Thin.ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'),
+        url('../../fonts/Roboto-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'),
+        url('../../fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+}
+
+
+
+body {
+    margin: 0;
+    position: relative;
+    font-family: 'Roboto', Courier, monospace;
+    font-weight: normal;
+    z-index: -100;
+
+    h1,
+    h2,
+    p {
+        margin: 0;
+    }
+}
+
+.cont {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 82%;
+    position: relative;
+    overflow: hidden;
+
+    // @media only screen and (min-width: 2500px) {
+    //     width: 100%;
+    //     max-width: 1920px;
+    // }
+}
+
+.headSection {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    min-height: 600px;
+    background: rgb(4, 2, 15);
+
+    z-index: -2;
+
+    .mainHeader {
+        background: inherit;
+        border: 0;
+        border-radius: 50%;
+
+        .logo {
+            display: flex;
+            width: 380px;
+            min-height: 380px;
+            height: auto;
+            position: relative;
+
+            border-radius: 50%;
+
+            background: inherit;
+
+
+            &::after {
+                content: '';
+                position: absolute;
+
+                top: -10px;
+                left: -10px;
+                z-index: -1;
+
+                width: calc(105%);
+                height: calc(105%);
+                border-radius: inherit;
+                background: linear-gradient(250deg, #1bc2af, #5a4ea0, #ba2b69, #5a4ea0, #1bc2af);
+                background-size: 300% 300%;
+                box-shadow: inset 2px 4px 9px rgba(206, 200, 238, 0.466);
+                animation: perehod 5s infinite;
+            }
+
+            h1 {
+                margin: auto;
+                font-size: 50px;
+                font-weight: 100;
+                color: #ffffff;
+                user-select: none;
+                display: inline-block;
+                position: relative;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0);
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background: linear-gradient(250deg, #1bc2af, #5a4ea0, #ba2b69);
+                    transform-origin: bottom right;
+                    transition: transform 0.25s ease-out;
+
+                    
+                }
+
+                &:hover::after {
+                    transform: scaleX(1);
+                    transform-origin: bottom left;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    background: rgb(4, 2, 15);
+
+    .copy {
+        margin: 32px 0;
+        color: white;
+        font-size: 14px;
+    }
+
+    .copySpan {
+        margin-right: 6px;
+    }
+}
+
+@keyframes perehod {
+    to {
+        background-position: 0 50%
+    }
+
+    50% {
+        background-position: 100% 50%
+    }
+
+    from {
+        background-position: 0 50%
+    }
+}
