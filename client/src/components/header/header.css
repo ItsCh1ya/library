@@ -1,0 +1,20 @@
+header {
+    z-index: 3;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+}
+
+.Header {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Header a {
+    color: #fff;
+    font-weight: 700;
+}

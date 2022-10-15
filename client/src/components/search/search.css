@@ -1,0 +1,10 @@
+.search {
+    width: 50%;
+    border-radius: 16px;
+    border: none;
+    height: 30px;
+    font-size: 18px;
+    padding: 4px 32px;
+    position: relative;
+    top: 20%;
+}

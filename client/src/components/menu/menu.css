@@ -1,0 +1,16 @@
+.Menu {
+    display: flex;
+}
+
+.Menu li {
+    margin-right: 8px;
+}
+
+.Menu li:last-child {
+    margin-right: 0;
+}
+
+.Menu a {
+    display: block;
+    padding: 12px 16px;
+}
