@@ -18,7 +18,7 @@ def api_delete_book():
     requested_json = request.json
     db.books.find_one_and_delete({
         "_id":{"$oid":requested_json['id']}
-    }
+    })
     return jsonify({"status":"success", "description":"Book successfuly deleted from db"})
 
 @app.route("/api/get_all_books")
