@@ -49,6 +49,7 @@ body {
 }
 
 .block {
+    display: flex;
     width: 300px;
     height: 300px;
     margin: 20px;
@@ -156,7 +157,7 @@ main {
             margin: auto;
             min-width: 40%;
             font-size: 35px;
-            font-weight: 700;
+            font-weight: 100;
             text-align: center;
 
             color: rgb(4, 2, 15);
@@ -171,6 +172,7 @@ main {
                 h2 {
                     padding: 0 0 35px 0;
                     border-bottom: 4px solid rgb(4, 2, 15);
+                    font-weight: 300;
                 }
             }
         }
@@ -181,6 +183,7 @@ main {
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
+            margin: 0;
 
             .topLeftNews {
                 background: #1bc2af;
@@ -197,30 +200,49 @@ main {
             .botRightNews {
                 background: #1b69c2;
             }
+
+            h3 {
+                margin: auto;
+                color: #fff;
+
+                font-size: 35px;
+                font-weight: 700;
+            }
         }
     }
 
     .purpleBack {
-        background: url(../../img/fatbooks.jpg) no-repeat;
+        background: url(../../img/fatbooks2.jpg) no-repeat;
 
         .purpleNewsDirectory {
-            min-height: 500px;
+            min-height: 1500px;
             display: flex;
             justify-content: space-between;
 
-            .purpleBlock {
+            .createBook {
                 margin: auto;
-                min-width: 65%;
 
-                color: #ffffff;
-                background: #5a4ea0;
+                p {
+                    color: #fff;
+                    font-size: 60px;
+                    font-weight: 300;
+                    border-bottom: 3px solid #fff;
+                }
             }
 
-            .purpleNews {
-                min-width: 35%;
-                background: #ffffff;
-                text-align: center;
-            }
+            // .purpleBlock {
+            //     margin: auto;
+            //     min-width: 65%;
+
+            //     color: #ffffff;
+            //     background: #5a4ea0;
+            // }
+
+            // .purpleNews {
+            //     min-width: 35%;
+            //     background: #ffffff;
+            //     text-align: center;
+            // }
         }
     }
 }
