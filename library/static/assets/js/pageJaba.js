@@ -22,14 +22,14 @@ buttCreate.onclick = function () {
 
 buttEdit.onclick = function () {
     showText(
-        `Редактируйте`,
-        `??`
+        `Время меняться`,
+        `Вы всегда можете отредактировать уже готовые записи!`
     );
 };
 
 buttContact.onclick = function () {
     showText(
         `Наши контакты`,
-        `???`
+        `+7 900 900 90 90`
     );
 };
