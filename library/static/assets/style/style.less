@@ -55,10 +55,12 @@ body {
     margin: 20px;
     border-radius: 2%;
     text-align: center;
+    user-select: none;
+    transition: .4s;
 
-     &:hover {
+    &:hover {
         cursor: pointer;
-     }
+    }
 }
 
 .headSection {
@@ -109,7 +111,7 @@ body {
                 margin: auto;
                 font-size: 50px;
                 font-weight: 100;
-                color: #ffffff;
+                color: #fff;
                 user-select: none;
                 display: inline-block;
                 position: relative;
@@ -151,7 +153,7 @@ main {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background: #ffffff;
+        background: #fff;
 
         .leftNewsBlock {
             margin: auto;
@@ -184,26 +186,54 @@ main {
             align-items: center;
             flex-wrap: wrap;
             margin: 0;
+            color: #fff;
 
             .topLeftNews {
                 background: #1bc2af;
+
+                &:hover {
+                    color: #1bc2af;
+                    background: #fff;
+                    box-shadow: 0 15px 20px rgba(27, 194, 175, 0.5);
+                    transform: translateY(-10px);
+                }
             }
 
             .topRightNews {
                 background: #5a4ea0;
+
+                &:hover {
+                    color: #5a4ea0;
+                    background: #fff;
+                    box-shadow: 10px 15px 0 rgba(90, 78, 160, 0.5);
+                    transform: translate(-10px, -10px);
+                }
             }
 
             .botLeftNews {
                 background: #ba2b69;
+
+                &:hover {
+                    color: #ba2b69;
+                    background: #fff;
+                    box-shadow: 10px 15px 0 rgba(186, 43, 105, 0.5);
+                    transform: translate(-10px, -10px);
+                }
             }
 
             .botRightNews {
                 background: #1b69c2;
+
+                &:hover {
+                    color: #1b69c2;
+                    background: #fff;
+                    box-shadow: 0 15px 20px rgba(27, 105, 194, 0.5);
+                    transform: translateY(-10px);
+                }
             }
 
             h3 {
                 margin: auto;
-                color: #fff;
 
                 font-size: 35px;
                 font-weight: 700;
@@ -212,7 +242,8 @@ main {
     }
 
     .purpleBack {
-        background: url(../../img/fatbooks2.jpg) no-repeat;
+        background: url(../../img/fatbooks2.png) no-repeat;
+        background-size: cover;
 
         .purpleNewsDirectory {
             min-height: 1500px;
@@ -222,38 +253,36 @@ main {
             .createBook {
                 margin: auto;
 
-                p {
+                .linkArchive {
+                    padding: 20px 30px;
                     color: #fff;
                     font-size: 60px;
                     font-weight: 300;
-                    border-bottom: 3px solid #fff;
+                    text-decoration: none;
+                    border: solid rgba(255, 255, 255, 1);
+                    border-width: 4px 2px 4px 2px;
+                    background: rgba(255, 255, 255, 0.1);
+                    backdrop-filter: blur(2px);
+                    transition: .3s;
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.2);
+                        backdrop-filter: blur(5px);
+                    }
                 }
             }
-
-            // .purpleBlock {
-            //     margin: auto;
-            //     min-width: 65%;
-
-            //     color: #ffffff;
-            //     background: #5a4ea0;
-            // }
-
-            // .purpleNews {
-            //     min-width: 35%;
-            //     background: #ffffff;
-            //     text-align: center;
-            // }
         }
     }
 }
 
 footer {
+    min-height: 100px;
     background: rgb(4, 2, 15);
 
     .copy {
         margin: 32px 0;
         color: white;
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .copySpan {
