@@ -4,3 +4,7 @@ from flask import render_template
 @app.route('/')
 def view_index():
     return render_template('index.html')
+
+@app.route('/create')
+def view_create():
+    return render_template('create.html')
