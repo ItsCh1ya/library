@@ -1,0 +1,75 @@
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'),
+        url('../fonts/Roboto-Thin.ttf');
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'),
+        url('../fonts/Roboto-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: local('Roboto'),
+        url('../fonts/Roboto-Bold.ttf');
+    font-weight: 700;
+}
+
+.cont {
+    margin: 0 auto;
+    max-width: 1440px;
+    width: 82%;
+    position: relative;
+    overflow: hidden;
+
+    // @media only screen and (min-width: 2500px) {
+    //     width: 100%;
+    //     max-width: 1920px;
+    // }
+}
+
+body {
+    margin: 0;
+    position: relative;
+    font-family: 'Roboto', Courier, monospace;
+    font-weight: normal;
+    background: url(../img/fatbooks.jpg) no-repeat fixed;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    height: 150px;
+    color: #fff;
+    background: rgb(4, 2, 15);
+
+    h1 {
+        font-size: 40px;
+        font-weight: 100;
+    }
+}
+
+main {
+
+    .booksPage {
+        display: flex;
+        justify-content: center;
+        min-height: 900px;
+        width: auto;
+        background: rgba(4, 2, 15, 0.5);
+        color: #fff;
+
+        .booksList {
+            width: 90%;
+            margin: 10px 0 10px 0;
+
+            font-size: 25px;
+        }
+    }
+}
