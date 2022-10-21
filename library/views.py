@@ -7,7 +7,7 @@ def view_index():
 
 @app.route('/library')
 def view_library():
-    return render_template('index.html')
+    return render_template('library.html')
 
 @app.route('/create')
 def view_create():
