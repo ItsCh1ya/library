@@ -1,6 +1,7 @@
 from library import app, db
 from flask import request, jsonify
 from bson.json_util import dumps
+from bson.objectid import ObjectId
 
 @app.route("/api/save_book", methods=["POST", "PUT"])
 def api_save_book():
@@ -17,7 +18,7 @@ def api_save_book():
 def api_delete_book():
     requested_json = request.json
     db.books.find_one_and_delete({
-        "_id":{"$oid":requested_json['id']}
+        "_id":ObjectId(requested_json['id'])
     })
     return jsonify({"status":"success", "description":"Book successfuly deleted from db"})
 
@@ -35,11 +36,13 @@ def api_get_books():
 def api_edit_book():
     requested_json = request.json
     db.books.find_one_and_update({
-        "_id":{"$oid":requested_json['id']}
+        "_id":ObjectId(requested_json['id'])
     },{
-        "title":requested_json['title'],
-        "author":requested_json['author'],
-        "year":requested_json['year'],
-        "url":requested_json['url']
+        "$set":{
+            "title":requested_json['title'],
+            "author":requested_json['author'],
+            "year":requested_json['year'],
+            "url":requested_json['url']
+        }
     })
     return jsonify({"status":"success", "description":"Book successfuly edited in db"})
