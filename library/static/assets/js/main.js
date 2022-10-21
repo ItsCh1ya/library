@@ -14,7 +14,7 @@ function fillTable(){
         <th>${el.title}</th>
         <th>${el.author}</th>
         <th>${el.year}</th>
-        <th>${el.link}</th>
+        <th>${el.url}</th>
     </tr>`);
 
     tableData.innerHTML = result.join('');
