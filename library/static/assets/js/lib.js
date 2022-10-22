@@ -1,4 +1,5 @@
-var current_page = 0
+var current_page = 0;
+var current_book = null;
 
 function add_book(id, name, titile, year, link) {
     let dBooksList = document.getElementsByClassName("booksList")[0];
@@ -6,16 +7,49 @@ function add_book(id, name, titile, year, link) {
         <div class="bookLine">
             <a href="${link}" class="btn"><i class="fa fa-download"></i></a>
             <span>${name} — ${titile} (${year})</span>
-            <button onclick="edit_book('${id}')" class="btn"><i class="fa fa-edit"></i></button>
+            <button onclick="show_edit_modal('${id}')" class="btn"><i class="fa fa-edit"></i></button>
         </div>
     `;
 }
 
-function show_edit_modal(book) {
-    
+function edit_book() {
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        url: "/api/edit_book",
+        data: JSON.stringify({
+            "id":current_book,
+            "title":$("#bookName").val(),
+            "url":$("#bookLink").val(),
+            "author":$("#bookAuthor").val(),
+            "year":$("#bookYear").val()
+        }),
+        success: function (response) {
+            $(".window").toggle();
+            add_ten_books()
+        }
+    });
 }
 
-function edit_book(id) {
+function delete_book() {
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        url: "/api/del_book",
+        data: JSON.stringify({
+            "id":current_book
+        }),
+        success: function (response) {
+            $(".window").toggle();
+            add_ten_books()
+        }
+    });
+}
+
+function show_edit_modal(id) {
+    current_book = id
     $.ajax({
         type: "POST",
         dataType: "json",
@@ -25,9 +59,17 @@ function edit_book(id) {
             "id":id
         }),
         success: function (response) {
-            show_edit_modal(response)
+            $(".window").toggle();
+            $("#bookName").val(response['title']);
+            $("#bookLink").val(response['url']);
+            $("#bookAuthor").val(response['author']);
+            $("#bookYear").val(response['year']);
         }
     });
+}
+
+function name(params) {
+    url
 }
 
 function add_ten_books() {

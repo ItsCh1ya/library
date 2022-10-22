@@ -14,7 +14,7 @@ def api_save_book():
     })
     return jsonify({"status":"success", "description":"Book successfuly added to db"})
 
-@app.route("/api/del_book")
+@app.route("/api/del_book", methods=["POST"])
 def api_delete_book():
     requested_json = request.json
     db.books.find_one_and_delete({
