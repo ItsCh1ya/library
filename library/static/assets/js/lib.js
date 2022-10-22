@@ -21,13 +21,32 @@ function edit_book() {
         url: "/api/edit_book",
         data: JSON.stringify({
             "id":current_book,
-            "title":$("#bookName").val(),
-            "url":$("#bookLink").val(),
-            "author":$("#bookAuthor").val(),
-            "year":$("#bookYear").val()
+            "title":$("#bookNameEdit").val(),
+            "url":$("#bookLinkEdit").val(),
+            "author":$("#bookAuthorEdit").val(),
+            "year":$("#bookYearEdit").val()
         }),
         success: function (response) {
-            $(".window").toggle();
+            $(".window-edit").toggle();
+            add_ten_books()
+        }
+    });
+}
+
+function save_book() {
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        url: "/api/save_book",
+        data: JSON.stringify({
+            "title":$("#bookNameCreate").val(),
+            "url":$("#bookLinkCreate").val(),
+            "author":$("#bookAuthorCreate").val(),
+            "year":$("#bookYearCreate").val()
+        }),
+        success: function (response) {
+            $(".window-create").toggle();
             add_ten_books()
         }
     });
@@ -43,7 +62,7 @@ function delete_book() {
             "id":current_book
         }),
         success: function (response) {
-            $(".window").toggle();
+            $(".window-edit").toggle();
             add_ten_books()
         }
     });
@@ -60,11 +79,11 @@ function show_edit_modal(id) {
             "id":id
         }),
         success: function (response) {
-            $(".window").toggle();
-            $("#bookName").val(response['title']);
-            $("#bookLink").val(response['url']);
-            $("#bookAuthor").val(response['author']);
-            $("#bookYear").val(response['year']);
+            $(".window-edit").toggle();
+            $("#bookNameEdit").val(response['title']);
+            $("#bookLinkEdit").val(response['url']);
+            $("#bookAuthorEdit").val(response['author']);
+            $("#bookYearEdit").val(response['year']);
         }
     });
 }
