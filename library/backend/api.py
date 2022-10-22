@@ -33,7 +33,7 @@ def api_get_all_books():
 
 @app.route("/api/get_books", methods=["POST"])
 def api_get_books():
-    lBooks = db.books.find({}).skip(request.json['offset']*20).limit(10)
+    lBooks = db.books.find({}).skip(request.json['offset']*20).limit(20)
     return dumps(lBooks)
 
 @app.route("/api/get_book", methods=["POST"])

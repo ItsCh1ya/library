@@ -1,5 +1,6 @@
 var current_page = 0;
 var current_book = null;
+var able_to_next_page = true;
 
 function add_book(id, name, titile, year, link) {
     let dBooksList = document.getElementsByClassName("booksList")[0];
@@ -80,6 +81,10 @@ function add_ten_books() {
             "offset":current_page
         }),
         success: function (response) {
+            console.log(response.length)
+            if (response.length < 20) {
+                able_to_next_page = false;
+            }
             response.forEach(jBook => {
                 add_book(jBook['_id']['$oid'], jBook['author'], jBook['title'], jBook['year'], jBook['url'])
             });
@@ -88,7 +93,10 @@ function add_ten_books() {
 }
 
 function change_page(mod) {
-    if (current_page+mod >= 0) {
+    if (mod < 0) {
+        able_to_next_page = true;
+    }
+    if (current_page+mod >= 0 && able_to_next_page) {
         current_page += mod;
         add_ten_books();
         $("#label_page").html(current_page+1)
@@ -96,6 +104,7 @@ function change_page(mod) {
 }
 
 function change_page_to_last() {
+    able_to_next_page = false;
     $.ajax({
         type: "GET",
         dataType: "json",
