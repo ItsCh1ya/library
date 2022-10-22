@@ -19,7 +19,7 @@
 
     <main>
         <div class="cont booksPage">
-            <div class="window">
+            <div class="window" style="display: none; position: absolute;">
                 <h3>Редактирование</h3>
                 <label>
                     <input id="bookName" name="bookName" type="text" placeholder="Название" required>
@@ -34,10 +34,10 @@
                     <input id="bookYear" name="bookYear" type="text" placeholder="Год" required>
                 </label>
                 <div class="buttons">
-                    <input type="reset" value="Отмена">
-                    <input id="butt" class="btnOk" type="button" value="Готово">
+                    <input onclick="$('.window').toggle();" type="reset" value="Отмена">
+                    <input onclick="edit_book()" id="butt" class="btnOk" type="button" value="Готово">
                 </div>
-                <button class="btn"><i class="fa fa-trash"></i></button>
+                <button onclick="delete_book()" class="btn"><i class="fa fa-trash"></i></button>
             </div>
 
             <div class="booksList">
