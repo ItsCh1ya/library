@@ -99,5 +99,9 @@ function change_page(mod) {
     }
 }
 
+function change_page_to_last() {
+    
+}
+
 add_ten_books();
 $("#label_page").html(current_page+1)

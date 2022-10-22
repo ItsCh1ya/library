@@ -49,7 +49,7 @@
             </div>
 
             <div class="pages">
-                <button class="btn"><i class="fa fa-angle-double-left"></i></button>
+                <button onclick="current_page = 0; add_ten_books();$('#label_page').html(1)" class="btn"><i class="fa fa-angle-double-left"></i></button>
                 <button onclick="change_page(-1)" class="btn"><i class="fa fa-angle-left"></i></button>
                 <span id="label_page">Here</span>
                 <button onclick="change_page(1)" class="btn"><i class="fa fa-angle-right"></i></button>

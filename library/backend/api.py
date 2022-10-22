@@ -22,6 +22,10 @@ def api_delete_book():
     })
     return jsonify({"status":"success", "description":"Book successfuly deleted from db"})
 
+@app.route("/api/get_books_amount")
+def api_get_books_amount():
+    return db.books.count_documents({})
+
 @app.route("/api/get_all_books")
 def api_get_all_books():
     lBooks = db.books.find({})
