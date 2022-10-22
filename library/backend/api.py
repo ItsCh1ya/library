@@ -32,6 +32,13 @@ def api_get_books():
     lBooks = db.books.find({}).skip(request.json['offset']*20).limit(10)
     return dumps(lBooks)
 
+@app.route("/api/get_book", methods=["POST"])
+def api_get_book():
+    if len(request.json['id']) != 24:
+        return {"status":"error", "desctiption":"bruh"}
+    dBook = db.books.find_one({"_id":ObjectId(request.json['id'])})
+    return dumps(dBook)
+
 @app.route("/api/edit_book", methods=["POST"])
 def api_edit_book():
     requested_json = request.json
