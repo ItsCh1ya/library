@@ -6,13 +6,28 @@ function add_book(id, name, titile, year, link) {
         <div class="bookLine">
             <a href="${link}" class="btn"><i class="fa fa-download"></i></a>
             <span>${name} — ${titile} (${year})</span>
-            <button onclick="edit_book('${id}')" class="btn"><i class="fa fa-bars"></i></button>
+            <button onclick="edit_book('${id}')" class="btn"><i class="fa fa-edit"></i></button>
         </div>
     `;
 }
 
-function edit_book(id) {
+function show_edit_modal(book) {
     
+}
+
+function edit_book(id) {
+    $.ajax({
+        type: "POST",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
+        url: "/api/get_book",
+        data: JSON.stringify({
+            "id":id
+        }),
+        success: function (response) {
+            show_edit_modal(response)
+        }
+    });
 }
 
 function add_ten_books() {
@@ -33,3 +48,5 @@ function add_ten_books() {
         }
     });
 }
+
+add_ten_books();
