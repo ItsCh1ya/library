@@ -68,10 +68,6 @@ function show_edit_modal(id) {
     });
 }
 
-function name(params) {
-    url
-}
-
 function add_ten_books() {
     let dBooksList = document.getElementsByClassName("booksList")[0];
     dBooksList.innerHTML = "";
@@ -100,7 +96,16 @@ function change_page(mod) {
 }
 
 function change_page_to_last() {
-    
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "/api/get_books_amount",
+        success: function (response) {
+            current_page = Math.floor(response/20)
+            add_ten_books();
+            $("#label_page").html(current_page+1)
+        }
+    });
 }
 
 add_ten_books();

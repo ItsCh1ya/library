@@ -24,7 +24,7 @@ def api_delete_book():
 
 @app.route("/api/get_books_amount")
 def api_get_books_amount():
-    return db.books.count_documents({})
+    return jsonify(db.books.count_documents({}))
 
 @app.route("/api/get_all_books")
 def api_get_all_books():
