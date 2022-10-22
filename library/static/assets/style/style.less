@@ -41,11 +41,6 @@ body {
     width: 82%;
     position: relative;
     overflow: hidden;
-
-    // @media only screen and (min-width: 2500px) {
-    //     width: 100%;
-    //     max-width: 1920px;
-    // }
 }
 
 .block {
@@ -60,6 +55,15 @@ body {
 
     &:hover {
         cursor: pointer;
+    }
+
+    @media only screen and (max-width: 1250px) {
+        flex-direction: column;
+        height: 230px;
+    }
+
+    @media only screen and (max-width: 500px) {
+        height: 100px;
     }
 }
 
@@ -176,6 +180,10 @@ main {
                     font-weight: 300;
                 }
             }
+
+            @media only screen and (max-width: 500px) {
+                font-size: 20px;
+            }
         }
 
         .rightNewsBlock {
@@ -238,6 +246,10 @@ main {
                 font-weight: 700;
             }
         }
+
+        @media only screen and (max-width: 1250px) {
+            flex-direction: column;
+        }
     }
 
     .purpleBack {
@@ -267,6 +279,10 @@ main {
                     &:hover {
                         background: rgba(255, 255, 255, 0.2);
                         backdrop-filter: blur(5px);
+                    }
+
+                    @media only screen and (max-width: 500px) {
+                        font-size: 30px;
                     }
                 }
             }
