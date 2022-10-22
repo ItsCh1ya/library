@@ -48,9 +48,39 @@ header {
     color: #fff;
     background: rgb(4, 2, 15);
 
-    h1 {
-        font-size: 40px;
-        font-weight: 100;
+    .headerCont {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .btnCreate {
+            cursor: pointer;
+            margin: 0 130px 0 0;
+            padding: 15px;
+            height: 60px;
+
+            border: none;
+            border-radius: 30px;
+            font-size: 22px;
+            font-weight: 100;
+            font-family: 'Roboto', Courier, monospace;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            transition: .2s;
+
+            &:hover {
+                background: rgba(255, 255, 255, 0.4);
+            }
+
+            &:active {
+                background: rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 100;
+        }
     }
 }
 
@@ -182,7 +212,7 @@ main {
                     height: 2px;
                     width: 80px;
                     background: rgb(145, 137, 255);
-                 }
+                }
             }
         }
 
