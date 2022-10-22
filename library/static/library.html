@@ -19,7 +19,7 @@
 
     <main>
         <div class="cont booksPage">
-            <div class="window" style="display: none; position: absolute;" > 
+            <div class="window">
                 <h3>Редактирование</h3>
                 <label>
                     <input id="bookName" name="bookName" type="text" placeholder="Название" required>
@@ -34,10 +34,10 @@
                     <input id="bookYear" name="bookYear" type="text" placeholder="Год" required>
                 </label>
                 <div class="buttons">
-                    <input onclick="$('.window').toggle();" type="reset" value="Отмена">
-                    <input onclick="edit_book()" id="butt" class="btnOk" type="button" value="Готово">
+                    <input type="reset" value="Отмена">
+                    <input id="butt" class="btnOk" type="button" value="Готово">
                 </div>
-                <button onclick="delete_book()" class="btn"><i class="fa fa-trash"></i></button>
+                <button class="btn"><i class="fa fa-trash"></i></button>
             </div>
 
             <div class="booksList">
@@ -46,6 +46,14 @@
                     <span>Some text</span>
                     <button class="btn"><i class="fa fa-bars"></i></button>
                 </div>
+            </div>
+
+            <div class="pages">
+                <button class="btn"><i class="fa fa-angle-double-left"></i></button>
+                <button onclick="change_page(-1)" class="btn"><i class="fa fa-angle-left"></i></button>
+                <span id="label_page">Here</span>
+                <button onclick="change_page(1)" class="btn"><i class="fa fa-angle-right"></i></button>
+                <button class="btn"><i class="fa fa-angle-double-right"></i></button>
             </div>
         </div>
     </main>

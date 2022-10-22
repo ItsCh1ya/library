@@ -91,4 +91,13 @@ function add_ten_books() {
     });
 }
 
+function change_page(mod) {
+    if (current_page+mod >= 0) {
+        current_page += mod;
+        add_ten_books();
+        $("#label_page").html(current_page+1)
+    }
+}
+
 add_ten_books();
+$("#label_page").html(current_page+1)
