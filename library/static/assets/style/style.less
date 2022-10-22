@@ -1,21 +1,21 @@
 @font-face {
     font-family: 'Roboto';
     src: local('Roboto'),
-        url('/assets/fonts/Roboto-Thin.ttf');
+        url('../fonts/Roboto-Thin.ttf');
     font-weight: 100;
 }
 
 @font-face {
     font-family: 'Roboto';
     src: local('Roboto'),
-        url('/assets/fonts/Roboto-Light.ttf');
+        url('../fonts/Roboto-Light.ttf');
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'Roboto';
     src: local('Roboto'),
-        url('/assets/fonts/Roboto-Bold.ttf');
+        url('../fonts/Roboto-Bold.ttf');
     font-weight: 700;
 }
 
@@ -68,7 +68,7 @@ body {
     position: relative;
     justify-content: center;
     align-items: center;
-    min-height: 600px;
+    min-height: 1000px;
     background: rgb(4, 2, 15);
 
     z-index: -2;
@@ -136,10 +136,6 @@ body {
                 &:hover::after {
                     transform: scaleX(1);
                     transform-origin: bottom left;
-                }
-
-                &:hover {
-                    cursor: pointer;
                 }
             }
         }
@@ -245,7 +241,7 @@ main {
     }
 
     .purpleBack {
-        background: url(/assets/img/fatbooks2.png) no-repeat;
+        background: url(../img/fatbooks2.png) no-repeat;
         background-size: cover;
 
         .purpleNewsDirectory {
